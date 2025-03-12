@@ -9,10 +9,15 @@ const root = document.getElementById('root')
 render(() => {
     const queryClient = new QueryClient({
         defaultOptions: {
-          queries: {
-            refetchOnWindowFocus: false,
-            retry: 0,
-          },
+            queries: {
+                refetchOnWindowFocus: false,
+                retry: 0,
+            },
         },
-      });
-      return (<QueryClientProvider client={queryClient}><App /></QueryClientProvider>)}, root!)
+    })
+    return (
+        <QueryClientProvider client={queryClient}>
+            <App />
+        </QueryClientProvider>
+    )
+}, root!)
